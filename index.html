@@ -146,6 +146,10 @@ footer a{color:var(--navy)}
 .dark::before,.card:last-child::before{background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(159,179,255,.22),transparent 60%)}
 .t:hover::before,.card:hover::before{opacity:1}
 .hero .main,.try{z-index:0}
+.crumbs{display:flex;gap:8px;align-items:center;margin-top:22px;font-size:15px;color:var(--mut)}
+.crumbs a{color:var(--navy);font-weight:700;text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.crumbs+main .hero{margin-top:12px}
 </style>
 </head>
 <body>
@@ -161,6 +165,7 @@ footer a{color:var(--navy)}
   </nav>
  </div>
 </header>
+<nav class="crumbs" aria-label="Ruta"><a href="/proyectos/">Proyectos</a><span aria-hidden="true">/</span><a href="/proyectos/#herramientas">Herramientas y asistentes</a></nav>
 
 <main>
 <section class="hero">
@@ -310,7 +315,7 @@ footer a{color:var(--navy)}
 </section>
 </main>
 
-<footer><span>El Consejo de Clío · Material de libre uso para docentes. Los miembros del consejo son una IA y pueden equivocarse: revisad siempre los datos.</span><span>© 2026 Jorge Delgado Aguilera · <a href="https://www.instagram.com/pasadoproximo/" rel="noopener">@pasadoproximo</a></span></footer>
+<footer><span><a href="/proyectos/">← Todos los proyectos</a></span><span>El Consejo de Clío · Material de libre uso para docentes. Los miembros del consejo son una IA y pueden equivocarse: revisad siempre los datos.</span><span>© 2026 Jorge Delgado Aguilera · <a href="https://www.instagram.com/pasadoproximo/" rel="noopener">@pasadoproximo</a></span></footer>
 </div>
 
 <script>
