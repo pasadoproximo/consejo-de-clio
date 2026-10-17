@@ -150,18 +150,26 @@ footer a{color:var(--navy)}
 .crumbs a{color:var(--navy);font-weight:700;text-decoration:none}
 .crumbs a:hover{text-decoration:underline}
 .crumbs+main .hero{margin-top:12px}
+/* Barra: la misma que el portfolio */
+.brand{margin-left:8px}
+.bar nav a[aria-current="page"]{background:var(--bg);font-weight:700}
+.bar nav a.cv{display:inline-flex;align-items:center;gap:6px}
+.bar nav a.cv svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:780px){.bar nav a.nav-key{display:inline-flex}.bar nav{gap:4px}.bar nav a{padding:8px 12px}.bar nav a.cv{display:none}}
+@media (max-width:440px){.bar nav a{padding:8px 10px;font-size:15px}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header class="top">
  <div class="bar">
-  <a class="brand" href="/"><span class="logo" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 26 26"><path d="M13 2 2 7h22L13 2Z" fill="#fff"/><rect x="3" y="8" width="20" height="2" fill="#fff"/><rect x="5" y="11" width="2.4" height="9" fill="#fff"/><rect x="9.6" y="11" width="2.4" height="9" fill="#fff"/><rect x="14" y="11" width="2.4" height="9" fill="#fff"/><rect x="18.6" y="11" width="2.4" height="9" fill="#fff"/><rect x="2" y="21" width="22" height="2.4" fill="#fff"/></svg></span><span><b>Jorge Delgado</b><small>El Consejo de Clío</small></span></a>
-  <nav aria-label="Secciones">
-   <a href="#consejo">El consejo</a>
-   <a href="#sesion">Una sesión</a>
-   <a href="#como">Cómo funciona</a>
-   <a class="hire" href="/">Portfolio</a>
+  <a class="brand" href="/" aria-label="Inicio · Jorge Delgado Aguilera"><span class="logo" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 26 26"><path d="M13 2 2 7h22L13 2Z" fill="#fff"/><rect x="3" y="8" width="20" height="2" fill="#fff"/><rect x="5" y="11" width="2.4" height="9" fill="#fff"/><rect x="9.6" y="11" width="2.4" height="9" fill="#fff"/><rect x="14" y="11" width="2.4" height="9" fill="#fff"/><rect x="18.6" y="11" width="2.4" height="9" fill="#fff"/><rect x="2" y="21" width="22" height="2.4" fill="#fff"/></svg></span></a>
+  <nav aria-label="Principal">
+   <a class="nav-key" href="/proyectos/" aria-current="page">Proyectos</a>
+   <a href="/#sobre-mi">Sobre mí</a>
+   <a href="/herramientas/">Caja de herramientas</a>
+   <a class="cv" href="/assets/pdf/CV-Jorge-Delgado-Aguilera.pdf" download aria-label="Descargar CV (PDF)">CV <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a>
+   <a class="hire" href="/#contacto">Contacto</a>
   </nav>
  </div>
 </header>
