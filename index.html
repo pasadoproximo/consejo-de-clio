@@ -27,9 +27,9 @@ a{color:inherit}
 :focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:8px}
 .wrap{max-width:1240px;margin:0 auto;padding-inline:20px}
 /* barra superior */
-.top{position:sticky;top:0;z-index:20;margin-top:12px}
+.top{position:sticky;top:12px;z-index:20;margin-top:12px}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(255,255,255,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:999px;padding:8px 8px 8px 10px;box-shadow:0 8px 30px rgba(6,16,51,.06);transition:border-radius .25s}
-body.stuck .bar{border-top-left-radius:0;border-top-right-radius:0;border-top-color:transparent;border-bottom-left-radius:24px;border-bottom-right-radius:24px}
+/* la barra mantiene su forma de píldora también al bajar, separada del borde */
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .logo{width:38px;height:38px;border-radius:12px;background:var(--navy);display:grid;place-items:center;flex:none}
 .brand b{font:800 17px/1 var(--f-disp);letter-spacing:-.01em}
