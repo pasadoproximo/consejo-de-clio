@@ -158,6 +158,19 @@ footer a{color:var(--navy)}
 .bar nav a.cv svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 @media (max-width:780px){.bar nav a.nav-key{display:inline-flex}.bar nav{gap:4px}.bar nav a{padding:8px 12px}.bar nav a.cv{display:none}}
 @media (max-width:440px){.bar nav a{padding:8px 10px;font-size:15px}}
+/* al pulsar el logo: el templo se encoge y rebota, las columnas se aplastan una tras otra y el frontón da un saltito */
+.logo svg *{transform-box:fill-box}
+.logo svg>path{transform-origin:50% 100%}
+.logo svg>rect{transform-origin:50% 100%}
+.brand.tap .logo{animation:lg-press .6s cubic-bezier(.3,.7,.4,1)}
+.brand.tap .logo svg>path{animation:lg-roof .6s cubic-bezier(.3,.7,.4,1)}
+.brand.tap .logo svg>rect:nth-of-type(n+2):nth-of-type(-n+5){animation:lg-col .5s ease-in-out both}
+.brand.tap .logo svg>rect:nth-of-type(3){animation-delay:.04s}
+.brand.tap .logo svg>rect:nth-of-type(4){animation-delay:.08s}
+.brand.tap .logo svg>rect:nth-of-type(5){animation-delay:.12s}
+@keyframes lg-press{0%,100%{transform:none}25%{transform:scale(.88)}60%{transform:scale(1.06)}}
+@keyframes lg-roof{0%,100%{transform:none}45%{transform:translateY(-38%) rotate(-5deg)}75%{transform:translateY(6%)}}
+@keyframes lg-col{0%,100%{transform:none}35%{transform:scaleY(.62)}68%{transform:scaleY(1.06)}}
 </style>
 </head>
 <body>
@@ -168,7 +181,7 @@ footer a{color:var(--navy)}
   <nav aria-label="Principal">
    <a class="nav-key" href="/proyectos/" aria-current="page">Proyectos</a>
    <a href="/#sobre-mi">Sobre mí</a>
-   <a href="/didakora/">Didakora</a>
+   <a href="/didakora/">Didákora</a>
    <a class="cv" href="/assets/pdf/CV-Jorge-Delgado-Aguilera.pdf" download aria-label="Descargar CV (PDF)">CV <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a>
    <a class="hire" href="/#contacto">Contacto</a>
   </nav>
@@ -376,6 +389,12 @@ document.getElementById("play").addEventListener("click",async e=>{
 </script>
 <script>(()=>{const f=()=>document.body.classList.toggle('stuck',scrollY>8);addEventListener('scroll',f,{passive:true});f();
 const m=document.querySelectorAll('.hero .mini');if(!m.length||matchMedia('(prefers-reduced-motion: reduce)').matches)return;let i=0;setInterval(()=>{m.forEach(e=>e.classList.remove('talk'));m[i%m.length].classList.add('talk');i++},1400)})();document.querySelectorAll('.t,.card').forEach(t=>t.addEventListener('pointermove',e=>{const r=t.getBoundingClientRect();t.style.setProperty('--mx',(e.clientX-r.left)+'px');t.style.setProperty('--my',(e.clientY-r.top)+'px');}));
+// logo del menú: al pulsarlo, el templo hace su animación y después va al inicio
+document.addEventListener('click',e=>{const b=e.target.closest('.brand');if(!b||e.metaKey||e.ctrlKey||e.shiftKey||e.button)return;
+ if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+ e.preventDefault();b.classList.remove('tap');void b.offsetWidth;b.classList.add('tap');
+ setTimeout(()=>{if(new URL(b.href,location.href).pathname!==location.pathname||location.search||location.hash)location.href=b.href;},520);
+});
 </script>
 </body>
 </html>
